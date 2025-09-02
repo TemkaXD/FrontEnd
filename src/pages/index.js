@@ -19,8 +19,8 @@ export default function Home() {
             <h1 className="text-5xl font-extrabold leading-tight">Temuujin Enkhdul</h1>
             
             <div className="space-y-2 text-lg text-indigo-100">
-              <p>Email: <span className="font-medium">hlotmka@email.com</span></p>
-              <p>LinkedIn: <span className="font-medium">linkedin.com/in/temka</span></p>
+              <p>Email <span className="font-medium">hlotmka@email.com</span></p>
+              <p>LinkedIn <span className="font-medium">linkedin.com/in/temka</span></p>
             </div>
             <a href="#contact" className="mt-6 px-8 py-3 bg-white text-indigo-900 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-100 transition duration-300 ease-in-out">
               Contact Me
@@ -62,7 +62,7 @@ export default function Home() {
               </div>
               <p className="text-sm text-indigo-500">Amjiltuud</p>
               <ul className="list-disc list-inside text-indigo-900 mt-2 space-y-2">
-                <li>Plat3 in Valorant</li>
+                <li>Diamond in Valorant</li>
                 <li>Tuuhiin olympiad top 10</li>
                 <li>Chess 1000 elo</li>
               </ul>
@@ -102,7 +102,7 @@ export default function Home() {
         </div>
 
         <div id="contact" className="text-center mt-16">
-          <h2 className="text-3xl font-semibold text-indigo-100">Let's Connect!</h2>
+          <h2 className="text-3xl font-semibold text-indigo-100">Let s Connect!</h2>
           <p className="text-lg text-indigo-200 mt-2">Feel free to reach out for any inquiries or collaboration opportunities</p>
           </div>
       </div>
