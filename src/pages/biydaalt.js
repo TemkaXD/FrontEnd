@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Marquee from "react-fast-marquee";
+
 
 export default function Biydaalt() {
   const [products, setProducts] = useState([]);
@@ -116,21 +118,19 @@ export default function Biydaalt() {
             <button aria-label="Open cart">
                <div className="relative flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors dark:border-neutral-700 dark:text-white">
                   <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth="1.5"
-        stroke="currentColor"
-        aria-hidden="true"
-        className="h-4 transition-all ease-in-out hover:scale-110"
-      >
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    className="h-4 transition-all ease-in-out hover:scale-110">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
         />
       </svg>
-
       <div className="absolute right-0 top-0 -mr-2 -mt-2 h-4 w-4 rounded bg-blue-600 text-[11px] font-medium text-white">
         2
       </div>
@@ -145,14 +145,13 @@ export default function Biydaalt() {
             <a className="relative block aspect-square h-full w-full" href="/product">
               <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border border-neutral-800  bg-black hover:border-blue-600">
                 <img
-                  alt={products[0].name}
-                  src={products[0].image}
+                  alt={products[0].name} 
+                  src={products[0].image} 
                   className="relative h-full w-full object-contain transition duration-300 ease-in-out group-hover:scale-105"
                 />
                 <div className="absolute bottom-0 left-0 flex w-full px-4 pb-4 lg:px-20 lg:pb-[35%]">
                   <div className="flex items-center rounded-full bg-black border border-neutral-700 p-1 text-xs font-semibold text-white backdrop-blur-md">
                     <h3 className="mr-4 line-clamp-2 flex-grow pl-2 leading-none tracking-tight">
-                      {products[0].name}
                     </h3>
                     <p className="flex-none rounded-full bg-blue-600 p-2 text-white">
                       {products[0].price} <span className="ml-1 inline">USD</span>
@@ -188,7 +187,8 @@ export default function Biydaalt() {
           ))}
         </section>
 
-        <div className="w-full overflow-x-auto pb-6 pt-1">
+        <Marquee>
+          <div className="w-full overflow-x-auto pb-6 pt-1">
           <ul className="flex gap-4 px-4">
             {products.map((product) => (
               <li key={product.id} className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
@@ -215,6 +215,7 @@ export default function Biydaalt() {
             ))}
           </ul>
      </div>
+    </Marquee>
       </main>
 
       <footer className="text-sm text-neutral-500">
