@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -13,13 +14,13 @@ export default function App() {
     <div className="font-mono overflow-x-hidden text-base bg-white">
       <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
         <div className="max-w-7xl mx-auto flex items-center justify-between py-5 px-8">
-          <a href="/products">
+          <Link href="/products">
             <img
               className="h-20 cursor-pointer"
               alt="Logo"
               src="/bag.png"
             />
-          </a>
+          </Link>
           <div
             className="relative cursor-pointer"
             onClick={() => setIsCartOpen(!isCartOpen)}
@@ -46,9 +47,9 @@ export default function App() {
             <br />
             best selling items
           </p>
-          <a className="text-black px-6 py-3 pr-16 rounded-full transition">
+          <Link className="text-black px-6 py-3 pr-16 rounded-full transition">
             Shop Now
-          </a>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-5">
@@ -65,7 +66,7 @@ export default function App() {
               $109.95
             </div>
             <div className="text-sm text-gray-500 mb-4 capitalize group-hover:text-violet-600">
-              men's clothing
+              mens clothing
             </div>
             <button
               className="bg-violet-500 hover:bg-violet-600 text-white font-semibold px-5 py-3 rounded-full active:scale-95 transition"
