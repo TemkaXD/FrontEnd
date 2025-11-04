@@ -128,7 +128,7 @@ export default function App() {
               $22.3
             </div>
             <div className="text-sm text-gray-500 mb-4 capitalize group-hover:text-violet-600">
-              men's clothing
+              mens clothing
             </div>
             <button
               className="bg-violet-500 hover:bg-violet-600 text-white font-semibold px-5 py-3 rounded-full active:scale-95 transition"
@@ -159,7 +159,7 @@ export default function App() {
               $22.3
             </div>
             <div className="text-sm text-gray-500 mb-4 capitalize group-hover:text-violet-600">
-              men's clothing
+              mens clothing
             </div>
             <button
               className="bg-violet-500 hover:bg-violet-600 text-white font-semibold px-5 py-3 rounded-full active:scale-95 transition"
@@ -190,7 +190,7 @@ export default function App() {
               $22.3
             </div>
             <div className="text-sm text-gray-500 mb-4 capitalize group-hover:text-violet-600">
-              men's clothing
+              mens clothing
             </div>
             <button
               className="bg-violet-500 hover:bg-violet-600 text-white font-semibold px-5 py-3 rounded-full active:scale-95 transition"
@@ -221,7 +221,7 @@ export default function App() {
               $22.3
             </div>
             <div className="text-sm text-gray-500 mb-4 capitalize group-hover:text-violet-600">
-              men's clothing
+              mens clothing
             </div>
             <button
               className="bg-violet-500 hover:bg-violet-600 text-white font-semibold px-5 py-3 rounded-full active:scale-95 transition"
@@ -252,7 +252,7 @@ export default function App() {
               $22.3
             </div>
             <div className="text-sm text-gray-500 mb-4 capitalize group-hover:text-violet-600">
-              men's clothing
+              mens clothing
             </div>
             <button
               className="bg-violet-500 hover:bg-violet-600 text-white font-semibold px-5 py-3 rounded-full active:scale-95 transition"
@@ -283,7 +283,7 @@ export default function App() {
               $22.3
             </div>
             <div className="text-sm text-gray-500 mb-4 capitalize group-hover:text-violet-600">
-              men's clothing
+              mens clothing
             </div>
             <button
               className="bg-violet-500 hover:bg-violet-600 text-white font-semibold px-5 py-3 rounded-full active:scale-95 transition"
@@ -314,7 +314,7 @@ export default function App() {
               $55.99
             </div>
             <div className="text-sm text-gray-500 mb-4 capitalize group-hover:text-violet-600">
-              men's clothing
+              mens clothing
             </div>
             <button
               className="bg-violet-500 hover:bg-violet-600 text-white font-semibold px-5 py-3 rounded-full active:scale-95 transition"
@@ -334,7 +334,6 @@ export default function App() {
         </div>
       </main>
 
-      {/* Cart Sidebar */}
       <div
         className={`fixed top-0 right-0 w-1/3 max-w-full h-screen bg-white border-l border-gray-200 shadow-xl transition-transform duration-500 z-50 ${
           isCartOpen ? "translate-x-0" : "translate-x-full"
