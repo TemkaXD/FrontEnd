@@ -53,16 +53,15 @@ export default function Biydaalt() {
         image: "https://cdn.shopify.com/s/files/1/0754/3727/7491/files/baby-cap-black.png?v=1690002570"
       }
     ]);
-    setLoading(false);
   }, []);
 
-  if (loading) { 
-    return ( 
-    <div className="min-h-screen bg-neutral-50 flex items-center justify-center"> 
-    <div className="text-lg text-neutral-600">
-      Loading...</div> 
-      </div> 
-      ); }
+  const firstProduct = products[0] || {
+  name: "Product Name",
+  price: "$0.00",
+  image: "/placeholder.png"
+};
+
+  
 
   return (
     <div className="min-h-screen bg-[#141313]">
@@ -139,14 +138,14 @@ export default function Biydaalt() {
          </div>
         </div>
       </nav>
-      <main>
+      <body>
         <section className="mx-auto grid max-w-screen-2xl gap-4 px-4 pb-4 md:grid-cols-6 md:grid-rows-2 lg:max-h-[calc(100vh-200px)]">
           <div className="md:col-span-4 md:row-span-2">
             <a className="relative block aspect-square h-full w-full" href="/product">
               <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border border-neutral-800  bg-black hover:border-blue-600">
                 <img
-                  alt={products[0].name} 
-                  src={products[0].image} 
+                  alt={firstProduct.name} 
+                  src={firstProduct.image} 
                   className="relative h-full w-full object-contain transition duration-300 ease-in-out group-hover:scale-105"
                 />
                 <div className="absolute bottom-0 left-0 flex w-full px-4 pb-4 lg:px-20 lg:pb-[35%]">
@@ -154,7 +153,7 @@ export default function Biydaalt() {
                     <h3 className="mr-4 line-clamp-2 flex-grow pl-2 leading-none tracking-tight">
                     </h3>
                     <p className="flex-none rounded-full bg-blue-600 p-2 text-white">
-                      {products[0].price} <span className="ml-1 inline">USD</span>
+                      {firstProduct.price} <span className="ml-1 inline">USD</span>
                     </p>
                   </div>
                 </div>
@@ -216,7 +215,7 @@ export default function Biydaalt() {
           </ul>
      </div>
     </Marquee>
-      </main>
+      </body>
 
       <footer className="text-sm text-neutral-500">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4">
