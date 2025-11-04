@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
+import Link from "next/link";
 
 
 export default function Biydaalt() {
@@ -68,7 +69,7 @@ export default function Biydaalt() {
       <nav className="relative flex items-center justify-between p-4 lg:px-6 bg-[#141313]">
         <div className="flex w-full items-center">
           <div className="flex w-full md:w-1/3">
-            <a className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6" href="/">
+            <Link className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6" href="/">
               <div className="flex flex-none items-center justify-center bg-black h-10 w-10 rounded-xl">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 28" className="h-4 w-4 fill-white">
                   <path d="M21.5758 9.75769L16 0L0 28H11.6255L21.5758 9.75769Z"></path>
@@ -78,22 +79,22 @@ export default function Biydaalt() {
               <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
                 Acme Store
               </div>
-            </a>
+            </Link>
             <ul className="hidden gap-6 text-sm md:flex md:items-center">
               <li>
-                <a className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/all">
+                <Link className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/all">
                   All
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="shirts">
+                <Link className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="shirts">
                   Shirts
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/stickers">
+                <Link className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/stickers">
                   Stickers
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -141,7 +142,7 @@ export default function Biydaalt() {
       <body>
         <section className="mx-auto grid max-w-screen-2xl gap-4 px-4 pb-4 md:grid-cols-6 md:grid-rows-2 lg:max-h-[calc(100vh-200px)]">
           <div className="md:col-span-4 md:row-span-2">
-            <a className="relative block aspect-square h-full w-full" href="/product">
+            <Link className="relative block aspect-square h-full w-full" href="/product">
               <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border border-neutral-800  bg-black hover:border-blue-600">
                 <img
                   alt={firstProduct.name} 
@@ -158,12 +159,12 @@ export default function Biydaalt() {
                   </div>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
 
           {products.slice(1, 3).map((product) => (
             <div key={product.id} className="md:col-span-2 md:row-span-1">
-              <a className="relative block aspect-square h-full w-full" href={`/product2`}>
+              <Link className="relative block aspect-square h-full w-full" href={`/product2`}>
                 <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border border-neutral-800 bg-black hover:border-blue-600">
                   <img
                     alt={product.name}
@@ -181,7 +182,7 @@ export default function Biydaalt() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           ))}
         </section>
@@ -191,7 +192,7 @@ export default function Biydaalt() {
           <ul className="flex gap-4 px-4">
             {products.map((product) => (
               <li key={product.id} className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
-                <a className="relative h-full w-full" href={`/product3`}>
+                <Link className="relative h-full w-full" href={`/product3`}>
                   <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border border-neutral-800 bg-black hover:border-blue-600">
                     <img
                       alt={product.name}
@@ -209,7 +210,7 @@ export default function Biydaalt() {
                       </div>
                     </div>
                   </div>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -220,7 +221,7 @@ export default function Biydaalt() {
       <footer className="text-sm text-neutral-500">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4">
           <div>
-            <a className="flex items-center gap-2 text-black md:pt-1" href="/">
+            <Link className="flex items-center gap-2 text-black md:pt-1" href="/">
               <div className="flex flex-none items-center justify-center border border-neutral-200 bg-white h-[30px] w-[30px] rounded-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 28" className="h-[10px] w-[10px] fill-black">
                   <path d="M21.5758 9.75769L16 0L0 28H11.6255L21.5758 9.75769Z"></path>
@@ -228,32 +229,32 @@ export default function Biydaalt() {
                 </svg>
               </div>
               <span className="uppercase text-white">Acme Store</span>
-            </a>
+            </Link>
           </div>
           <nav>
             <ul>
-              <li><a className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/">Home</a></li>
-              <li><a className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/about">About</a></li>
-              <li><a className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/terms-conditions">Terms & Conditions</a></li>
-              <li><a className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/">Shipping & Return Policy</a></li>
-              <li><a className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/about">Privacy Policy</a></li>
-              <li><a className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/terms-conditions">FAQ</a></li>
+              <li><Link className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/">Home</Link></li>
+              <li><Link className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/about">About</Link></li>
+              <li><Link className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/terms-conditions">Terms & Conditions</Link></li>
+              <li><Link className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/">Shipping & Return Policy</Link></li>
+              <li><Link className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/about">Privacy Policy</Link></li>
+              <li><Link className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/terms-conditions">FAQ</Link></li>
             </ul>
           </nav>
           <div className="md:ml-auto">
-            <a className="flex h-8 w-max flex-none items-center justify-center rounded-md border border-neutral-700 bg-black text-xs text-white" href="https://vercel.com/templates/next.js/nextjs-commerce">
+            <Link className="flex h-8 w-max flex-none items-center justify-center rounded-md border border-neutral-700 bg-black text-xs text-white" href="https://vercel.com/templates/next.js/nextjs-commerce">
               <span className="px-3">▲</span>
               <hr className="h-full border-r border-neutral-200" />
               <span className="px-3">Deploy</span>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="border-t border-neutral-200 py-6 text-sm">
           <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-1 px-4 md:flex-row md:gap-0 md:px-4">
             <p>© 2023-2025 ACME, Inc. All rights reserved.</p>
             <hr className="mx-4 hidden h-4 w-[1px] border-l border-neutral-400 md:inline-block" />
-            <p><a href="https://github.com/vercel/commerce">View the source</a></p>
-            <p className="md:ml-auto"><a href="https://vercel.com" className="text-black">Created by ▲ Vercel</a></p>
+            <p><Link href="https://github.com/vercel/commerce">View the source</Link></p>
+            <p className="md:ml-auto"><Link href="https://vercel.com" className="text-black">Created by ▲ Vercel</Link></p>
           </div>
         </div>
       </footer>
