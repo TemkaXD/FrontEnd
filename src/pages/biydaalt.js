@@ -192,7 +192,7 @@ export default function Biydaalt() {
           <ul className="flex gap-4 px-4">
             {products.map((product) => (
               <li key={product.id} className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
-                <Link className="relative h-full w-full" href={`/product3`}>
+                <Link className="relative h-full w-full" href={`/product`}>
                   <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border border-neutral-800 bg-black hover:border-blue-600">
                     <img
                       alt={product.name}
