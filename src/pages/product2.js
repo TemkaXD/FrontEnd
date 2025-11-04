@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from "next/link";
 
 export default function Page() {
   const [selectedSize, setSelectedSize] = useState('Medium');
@@ -10,36 +11,36 @@ export default function Page() {
     price: 12,
     description: 'Strong 210D ripstop nylon drawstring bag',
     features: [
-      'Strong 210D ripstop nylon drawstring bag',
-      'Available in multiple sizes',
-      'Easy-to-close durable drawstring',
-      'Sturdy, reusable, and resilient'
+      "Strong 210D ripstop nylon drawstring bag",
+      "Available in multiple sizes",
+      "Easy-to-close durable drawstring",
+      "Sturdy, reusable, and resilient"
     ],
     images: [
-      'https://cdn.shopify.com/s/files/1/0754/3727/7491/files/bag-1-dark.png?v=1689796304',
-      'https://cdn.shopify.com/s/files/1/0754/3727/7491/files/bag-1-light.png?v=1689796304',
+      "https://cdn.shopify.com/s/files/1/0754/3727/7491/files/bag-1-dark.png?v=1689796304",
+      "https://cdn.shopify.com/s/files/1/0754/3727/7491/files/bag-1-light.png?v=1689796304",
     ],
-    sizes: ['Small', 'Medium', 'Large']
+    sizes: ["Small", "Medium", "Large"]
   };
 
   const relatedProducts = [
     { 
       id: 1, 
-      name: 'Acme Cup', 
+      name: "Acme Cup", 
       price: 15, 
-      image: 'https://cdn.shopify.com/s/files/1/0754/3727/7491/files/cup-black.png?v=1690003088'
+      image: "https://cdn.shopify.com/s/files/1/0754/3727/7491/files/cup-black.png?v=1690003088"
     },
     { 
       id: 2, 
-      name: 'Acme Mug', 
+      name: "Acme Mug", 
       price: 15, 
       image: 'https://cdn.shopify.com/s/files/1/0754/3727/7491/files/mug-1.png?v=1690003527'
     },
     { 
       id: 3, 
-      name: 'Acme Sticker', 
+      name: "Acme Sticker", 
       price: 4, 
-      image: 'https://cdn.shopify.com/s/files/1/0754/3727/7491/files/sticker.png?v=1690003619'
+      image: "https://cdn.shopify.com/s/files/1/0754/3727/7491/files/sticker.png?v=1690003619"
     },
   ];
 
@@ -48,7 +49,7 @@ export default function Page() {
       <nav className="relative flex items-center justify-between p-4 lg:px-6 bg-[#141313]">
         <div className="flex w-full items-center">
           <div className="flex w-full md:w-1/3">
-            <a className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6" href="/biydaalt">
+            <Link className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6" href="/biydaalt">
               <div className="flex flex-none items-center justify-center bg-black h-10 w-10 rounded-xl">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 28" className="h-4 w-4 fill-white">
                   <path d="M21.5758 9.75769L16 0L0 28H11.6255L21.5758 9.75769Z"></path>
@@ -58,22 +59,22 @@ export default function Page() {
               <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
                 Acme Store
               </div>
-            </a>
+            </Link>
             <ul className="hidden gap-6 text-sm md:flex md:items-center">
               <li>
-                <a className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/all">
+                <Link className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/all">
                   All
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-neutral-500 underline-offset-4 hover:text-black hover:underline" href="/shirts">
+                <Link className="text-neutral-500 underline-offset-4 hover:text-black hover:underline" href="/shirts">
                   Shirts
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-neutral-500 underline-offset-4 hover:text-black hover:underline" href="/stickers">
+                <Link className="text-neutral-500 underline-offset-4 hover:text-black hover:underline" href="/stickers">
                   Stickers
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -104,7 +105,7 @@ export default function Page() {
       </nav>
 
 
-      <main className="mx-auto max-w-screen-2xl px-4 py-8">
+      <body className="mx-auto max-w-screen-2xl px-4 py-8">
         <div className="flex flex-col gap-8 md:flex-row md:gap-12">
           <div className="flex-1">
             <div className="relative aspect-square mb-4 overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black">
@@ -243,7 +244,7 @@ export default function Page() {
             ))}
           </div>
         </div>
-      </main>
+      </body>
 
       <footer className="text-sm text-neutral-500 dark:text-neutral-400 border-t border-neutral-200 dark:border-neutral-700 mt-16">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-6 py-12 md:flex-row md:gap-12">

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from "next/link";
 
 export default function All() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -27,7 +28,7 @@ export default function All() {
       <nav className="relative flex items-center justify-between p-4 lg:px-6 bg-[#141313]">
         <div className="flex w-full items-center">
           <div className="flex w-full md:w-1/3">
-            <a className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6" href="/biydaalt">
+            <Link className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6" href="/biydaalt">
               <div className="flex flex-none items-center justify-center bg-white h-10 w-10 rounded-xl">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 28" className="h-4 w-4 fill-black">
                   <path d="M21.5758 9.75769L16 0L0 28H11.6255L21.5758 9.75769Z"></path>
@@ -37,22 +38,22 @@ export default function All() {
               <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
                 Acme Store
               </div>
-            </a>
+            </Link>
             <ul className="hidden gap-6 text-sm md:flex md:items-center">
               <li>
-                <a className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/all">
+                <Link className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/all">
                   All
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/shirts">
+                <Link className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/shirts">
                   Shirts
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/stickers">
+                <Link className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/stickers">
                   Stickers
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

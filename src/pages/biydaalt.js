@@ -59,7 +59,7 @@ export default function Biydaalt() {
   const firstProduct = products[0] || {
   name: "Product Name",
   price: "$0.00",
-  image: "/placeholder.png"
+  image: "/placeholder.png",
 };
 
   
