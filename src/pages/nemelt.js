@@ -98,7 +98,7 @@ export default function App() {
               $22.3
             </div>
             <div className="text-sm text-gray-500 mb-4 capitalize group-hover:text-violet-600">
-              men's clothing
+              mens clothing
             </div>
             <button
               className="bg-violet-500 hover:bg-violet-600 text-white font-semibold px-5 py-3 rounded-full active:scale-95 transition"
