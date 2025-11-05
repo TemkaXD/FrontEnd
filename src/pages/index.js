@@ -1,111 +1,264 @@
-import Image from "next/image";
+import { useState, useEffect } from "react";
+import Marquee from "react-fast-marquee";
+import Link from "next/link";
 
 
-export default function Home() {
+export default function Index() {
+  const [products, setProducts] = useState([]);
+  const [cartItems, setCartItems] = useState([])
+;
+  const [loading, setLoading] = useState(true);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    setProducts([
+      {
+        id: 1,
+        name: "Acme Circles T-Shirt",
+        price: "$20.00",
+        image: "https://cdn.shopify.com/s/files/1/0754/3727/7491/files/t-shirt-1.png?v=1689798965"
+      },
+      {
+        id: 2,
+        name: "Acme Drawstring Bag",
+        price: "$12.00",
+        image: "https://cdn.shopify.com/s/files/1/0754/3727/7491/files/bag-1-dark.png?v=1689796304"
+      },
+      {
+        id: 3,
+        name: "Acme Cup",
+        price: "$15.00",
+        image: "https://cdn.shopify.com/s/files/1/0754/3727/7491/files/cup-black.png?v=1690003088"
+      },
+      {
+        id: 4,
+        name: "Acme Mug",
+        price: "$15.00",
+        image: "https://cdn.shopify.com/s/files/1/0754/3727/7491/files/mug-1.png?v=1690003527"
+      },
+      {
+        id: 5,
+        name: "Acme Hoodie",
+        price: "$50.00",
+        image: "https://cdn.shopify.com/s/files/1/0754/3727/7491/files/hoodie-1.png?v=1690003482"
+      },
+      {
+        id: 6,
+        name: "Acme Baby Onesie",
+        price: "$10.00",
+        image: "https://cdn.shopify.com/s/files/1/0754/3727/7491/files/baby-onesie-beige-1.png?v=1690002632"
+      },
+      {
+        id: 7,
+        name: "Acme Baby Cap",
+        price: "$10.00",
+        image: "https://cdn.shopify.com/s/files/1/0754/3727/7491/files/baby-cap-black.png?v=1690002570"
+      }
+    ]);
+  }, []);
+
+  const firstProduct = products[0] || {
+  name: "Product Name",
+  price: "$0.00",
+  image: "/placeholder.png",
+};
+
+  
+
   return (
-    <div className="bg-gradient-to-r from-pink-300 via-indigo-600 to-purple-600 text-white">
-      <div className="max-w-screen-lg mx-auto p-10">
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 mb-12">
-          <div className="flex flex-col items-center text-center md:text-left space-y-4">
-            
-            <div className="w-32 h-32  border-4 border-white object-cover shadow-xl">
-              <Image 
-                src="/zurag.png"
-                alt="Temuujin Enkhdul"
-                width={128}
-                height={128}
+    <div className="min-h-screen bg-[#141313]">
+      <nav className="relative flex items-center justify-between p-4 lg:px-6 bg-[#141313]">
+        <div className="flex w-full items-center">
+          <div className="flex w-full md:w-1/3">
+            <Link className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6" href="/">
+              <div className="flex flex-none items-center justify-center bg-black h-10 w-10 rounded-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 28" className="h-4 w-4 fill-white">
+                  <path d="M21.5758 9.75769L16 0L0 28H11.6255L21.5758 9.75769Z"></path>
+                  <path d="M26.2381 17.9167L20.7382 28H32L26.2381 17.9167Z"></path>
+                </svg>
+              </div>
+              <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
+                Acme Store
+              </div>
+            </Link>
+            <ul className="hidden gap-6 text-sm md:flex md:items-center">
+              <li>
+                <Link className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/all">
+                  All
+                </Link>
+              </li>
+              <li>
+                <Link className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="shirts">
+                  Shirts
+                </Link>
+              </li>
+              <li>
+                <Link className="text-neutral-500 underline-offset-4 hover:text-white hover:underline" href="/stickers">
+                  Stickers
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="hidden justify-center md:flex md:w-1/3">
+            <form className="relative w-full lg:w-80 xl:w-full">
+              <input
+                type="text"
+                placeholder="Search for products..."
+                className="w-full rounded-lg border border-neutral-700 bg-black px-4 py-2 text-sm text-white placeholder:text-neutral-500"
               />
-            </div>
-            <h1 className="text-5xl font-extrabold leading-tight">Temuujin Enkhdul</h1>
-            
-            <div className="space-y-2 text-lg text-indigo-100">
-              <p>Email <span className="font-medium">hlotmka@email.com</span></p>
-              <p>LinkedIn <span className="font-medium">linkedin.com/in/temka</span></p>
-            </div>
-            <a href="#contact" className="mt-6 px-8 py-3 bg-white text-indigo-900 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-100 transition duration-300 ease-in-out">
-              Contact Me
-            </a>
+              <div className="absolute right-0 top-0 mr-3 flex h-full items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+              </div>
+            </form>
           </div>
 
-          <div className="text-center md:text-left space-y-4 max-w-md mx-auto md:max-w-full">
-            <h2 className="text-3xl font-semibold text-indigo-100 pl-64">About Me</h2>
-            <p className="text-lg text-indigo-200">
-              Anh Nestd orj ireel IT giin talaar surj ehelsn. Python Programming helnuudig ehnees ni 4 jil garui uzj bn. Buh l python turliin helnuudig anhnaas ni surj bui intermediate baagi bnaa ez
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <h2 className="text-3xl font-semibold text-indigo-100">Experience</h2>
-            <div className="bg-white text-indigo-900 shadow-2xl rounded-xl p-8 hover:scale-105 transition duration-300 ease-in-out">
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="text-indigo-500 text-4xl">
-                  <i className="fas fa-briefcase"></i>
-                </div>
-                <h3 className="text-xl font-semibold">Software Engineer</h3>
-              </div>
-              <p className="text-sm text-indigo-500">Turshlaguud</p>
-              <ul className="list-disc list-inside text-indigo-900 mt-2 space-y-2">
-                <li>2014-2015 Ulsiin surguuli</li>
-                <li>2015-2020 Tusgal school</li>
-                <li>2020-2024 Nest IT School</li>
-              </ul>
-            </div>
-
-            <div className="bg-white text-indigo-900 shadow-2xl rounded-xl p-8 hover:scale-105 transition duration-300 ease-in-out">
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="text-indigo-500 text-4xl">
-                  <i className="fas fa-briefcase"></i>
-                </div>
-                <h3 className="text-xl font-semibold">Achievements</h3>
-              </div>
-              <p className="text-sm text-indigo-500">Amjiltuud</p>
-              <ul className="list-disc list-inside text-indigo-900 mt-2 space-y-2">
-                <li>Diamond in Valorant</li>
-                <li>Tuuhiin olympiad top 10</li>
-                <li>Chess 1000 elo</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="space-y-8">
-            <h2 className="text-3xl font-semibold text-indigo-100">Skills</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10">
-              <div className="bg-white text-indigo-900 shadow-2xl rounded-xl p-6 text-center hover:scale-105 transition duration-300 ease-in-out">
-                <p className="font-semibold text-lg">Java</p>
-                <p className="text-sm text-indigo-500">Advanced</p>
-              </div>
-              <div className="bg-white text-indigo-900 shadow-2xl rounded-xl p-6 text-center hover:scale-105 transition duration-300 ease-in-out">
-                <p className="font-semibold text-lg">C++</p>
-                <p className="text-sm text-indigo-500">Advanced</p>
-              </div>
-              <div className="bg-white text-indigo-900 shadow-2xl rounded-xl p-6 text-center hover:scale-105 transition duration-300 ease-in-out">
-                <p className="font-semibold text-lg">Javascript</p>
-                <p className="text-sm text-indigo-500">Intermediate</p>
-              </div>
-              <div className="bg-white text-indigo-900 shadow-2xl rounded-xl p-6 text-center hover:scale-105 transition duration-300 ease-in-out">
-                <p className="font-semibold text-lg">Python</p>
-                <p className="text-sm text-indigo-500">Intermediate</p>
-              </div>
-              <div className="bg-white text-indigo-900 shadow-2xl rounded-xl p-6 text-center hover:scale-105 transition duration-300 ease-in-out">
-                <p className="font-semibold text-lg">Git</p>
-                <p className="text-sm text-indigo-500">Advanced</p>
-              </div>
-              <div className="bg-white text-indigo-900 shadow-2xl rounded-xl p-6 text-center hover:scale-105 transition duration-300 ease-in-out">
-                
-                <p className="font-semibold text-lg">SQL</p>
-                <p className="text-sm text-indigo-500">Advanced</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="contact" className="text-center mt-16">
-          <h2 className="text-3xl font-semibold text-indigo-100">Let s Connect!</h2>
-          <p className="text-lg text-indigo-200 mt-2">Feel free to reach out for any inquiries or collaboration opportunities</p>
-          </div>
+         <div className="flex justify-end md:w-1/3">
+            <button aria-label="Open cart">
+               <div className="relative flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors dark:border-neutral-700 dark:text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    className="h-4 transition-all ease-in-out hover:scale-110">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+        />
+      </svg>
+      <div className="absolute right-0 top-0 -mr-2 -mt-2 h-4 w-4 rounded bg-blue-600 text-[11px] font-medium text-white">
+        2
       </div>
+    </div>
+  </button>
+         </div>
+        </div>
+      </nav>
+      <body>
+        <section className="mx-auto grid max-w-screen-2xl gap-4 px-4 pb-4 md:grid-cols-6 md:grid-rows-2 lg:max-h-[calc(100vh-200px)]">
+          <div className="md:col-span-4 md:row-span-2">
+            <Link className="relative block aspect-square h-full w-full" href="/product">
+              <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border border-neutral-800  bg-black hover:border-blue-600">
+                <img
+                  alt={firstProduct.name} 
+                  src={firstProduct.image} 
+                  className="relative h-full w-full object-contain transition duration-300 ease-in-out group-hover:scale-105"
+                />
+                <div className="absolute bottom-0 left-0 flex w-full px-4 pb-4 lg:px-20 lg:pb-[35%]">
+                  <div className="flex items-center rounded-full bg-black border border-neutral-700 p-1 text-xs font-semibold text-white backdrop-blur-md">
+                    <h3 className="mr-4 line-clamp-2 flex-grow pl-2 leading-none tracking-tight">
+                    </h3>
+                    <p className="flex-none rounded-full bg-blue-600 p-2 text-white">
+                      {firstProduct.price} <span className="ml-1 inline">USD</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          {products.slice(1, 3).map((product) => (
+            <div key={product.id} className="md:col-span-2 md:row-span-1">
+              <Link className="relative block aspect-square h-full w-full" href={`/product2`}>
+                <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border border-neutral-800 bg-black hover:border-blue-600">
+                  <img
+                    alt={product.name}
+                    src={product.image}
+                    className="relative h-full w-full object-contain transition duration-300 ease-in-out group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-0 left-0 flex w-full px-4 pb-4">
+                    <div className="flex items-center rounded-full border border-neutral-700 bg-black text-xs font-semibold text-white backdrop-blur-md">
+                      <h3 className="mr-4 line-clamp-2 flex-grow pl-2 leading-none tracking-tight">
+                        {product.name}
+                      </h3>
+                      <p className="flex-none rounded-full bg-blue-600 p-2 text-white">
+                        {product.price} <span className="ml-1">USD</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </section>
+
+        <Marquee>
+          <div className="w-full overflow-x-auto pb-6 pt-1">
+          <ul className="flex gap-4 px-4">
+            {products.map((product) => (
+              <li key={product.id} className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
+                <Link className="relative h-full w-full" href={`/product`}>
+                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border border-neutral-800 bg-black hover:border-blue-600">
+                    <img
+                      alt={product.name}
+                      src={product.image}
+                      className="relative h-full w-full object-contain transition duration-300 ease-in-out group-hover:scale-105"
+                    />
+                    <div className="absolute bottom-0 left-0 flex w-full px-4 pb-4">
+                      <div className="flex items-center rounded-full border border-neutral-700 bg-black p-1 text-xs font-semibold text-white backdrop-blur-md">
+                        <h3 className="mr-4 line-clamp-2 flex-grow pl-2 leading-none tracking-tight">
+                          {product.name}
+                        </h3>
+                        <p className="flex-none rounded-full bg-blue-600 p-2 text-white">
+                          {product.price} <span className="ml-1">USD</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+     </div>
+    </Marquee>
+      </body>
+
+      <footer className="text-sm text-neutral-500">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4">
+          <div>
+            <Link className="flex items-center gap-2 text-black md:pt-1" href="/">
+              <div className="flex flex-none items-center justify-center border border-neutral-200 bg-white h-[30px] w-[30px] rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 28" className="h-[10px] w-[10px] fill-black">
+                  <path d="M21.5758 9.75769L16 0L0 28H11.6255L21.5758 9.75769Z"></path>
+                  <path d="M26.2381 17.9167L20.7382 28H32L26.2381 17.9167Z"></path>
+                </svg>
+              </div>
+              <span className="uppercase text-white">Acme Store</span>
+            </Link>
+          </div>
+          <nav>
+            <ul>
+              <li><Link className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/">Home</Link></li>
+              <li><Link className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/about">About</Link></li>
+              <li><Link className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/terms-conditions">Terms & Conditions</Link></li>
+              <li><Link className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/">Shipping & Return Policy</Link></li>
+              <li><Link className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/about">Privacy Policy</Link></li>
+              <li><Link className="block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm" href="/terms-conditions">FAQ</Link></li>
+            </ul>
+          </nav>
+          <div className="md:ml-auto">
+            <Link className="flex h-8 w-max flex-none items-center justify-center rounded-md border border-neutral-700 bg-black text-xs text-white" href="https://vercel.com/templates/next.js/nextjs-commerce">
+              <span className="px-3">▲</span>
+              <hr className="h-full border-r border-neutral-200" />
+              <span className="px-3">Deploy</span>
+            </Link>
+          </div>
+        </div>
+        <div className="border-t border-neutral-200 py-6 text-sm">
+          <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-1 px-4 md:flex-row md:gap-0 md:px-4">
+            <p>© 2023-2025 ACME, Inc. All rights reserved.</p>
+            <hr className="mx-4 hidden h-4 w-[1px] border-l border-neutral-400 md:inline-block" />
+            <p><Link href="https://github.com/vercel/commerce">View the source</Link></p>
+            <p className="md:ml-auto"><Link href="https://vercel.com" className="text-black">Created by ▲ Vercel</Link></p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
